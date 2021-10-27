@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 function ImagePreview({match}) {
 	const [result, setResult] = useState(null);
 	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(null);
 
 	useEffect(() => {
 		fetchQuery()
