@@ -9,7 +9,7 @@ function Images({result}) {
 					result && result.length ? // result is passing and and result has length then it will do map
 					result.map(data => {
 						return (
-							<Link target="_blank" to={`/image/${data.id}`}> <img className="gallery-img"src={data.src.original} key={data.id} /> </Link>
+							<Link target="_blank" to={`/image/${data.id}`}> <img className="gallery-img" src={data.src.medium} key={data.id} /> </Link>
 						)
 					})
 					: ''

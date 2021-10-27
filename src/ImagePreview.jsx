@@ -2,10 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 
 function ImagePreview({match}) {
 	const [result, setResult] = useState(null);
-	const [tiny, setTiny] = useState(null);
-	const [fullImg, setFullImg] = useState(null);
 	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(null);
 
 	useEffect(() => {
 		fetchQuery()
@@ -61,8 +58,6 @@ function ImagePreview({match}) {
 				:
 				<div className="preview-img">
 					<img src={result.original} onClick={zoomImg}/>
-						<a href={result.original} download>download
-						</a>
 				</div>
 			}
 		</div>
