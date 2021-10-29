@@ -11,7 +11,6 @@ function Images({result}) {
 	const showImg = (imgId) => {
 		setId(imgId)
 		setShow(true);
-
 	}
 	console.log(id)
 	return(
@@ -30,7 +29,7 @@ function Images({result}) {
 			{/* <modal visible={show} id={ } /> */}
 			{
 
-					<ImagePreview id={id} showImg={show} setShowImg={setShow}/>
+				<ImagePreview id={id} showImg={show} setShowImg={setShow}/>
 
 			}
 			</div>

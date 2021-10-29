@@ -59,7 +59,6 @@ function ImagePreview({match, id, showImg, setShowImg}) {
 	console.log(isZoomed);
 	return (
 		<div className="fullview-block">
-			
 			<Modal dialogClassName={isZoomed?'full-img': ''} show={showImg} onHide={handleClose}>
 				<Modal.Header closeButton></Modal.Header>
 				<Modal.Body>
