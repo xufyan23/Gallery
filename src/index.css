@@ -28,7 +28,7 @@ button:focus {
 
 h1 {
   color: #ffffff;
-  font-size: 40px;
+  font-size: clamp(2rem, 2.5vw, 2.5rem);
   margin-bottom: 15px;
 }
 
@@ -56,10 +56,10 @@ form {
   width: 50%;
 }
 
-.form-control {
+.search-input {
   height: 50px;
   border-radius: 5px;
-  width: calc(100% - 7%);
+  width: 95%;
   border: 1px solid #ccc;
   outline: transparent;
   padding-left: 45px;
@@ -71,7 +71,7 @@ form {
   flex: 1 0 auto;
 }
 
-.search-icon {
+.search-btn {
   position: absolute;
   top: 12px;
   left: 12px;
@@ -84,19 +84,31 @@ form {
   gap: 15px;
 }
 
+.gallery-grid a {
+  filter: drop-shadow(2px 4px 6px #ccc);
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-grid a:hover {
+  transform: translateY(-10px);
+}
+
 .gallery-img {
-  width: 360px;
-  height: 350px;
+  aspect-ratio: 7/5;
+  width: 100%;
   object-fit: cover;
+  cursor: pointer;
 }
 
-.fullview-block .loader {
-  /* background: rgba(128, 127, 127, 0.3); */
+.modal-dialog {
+  max-width: 800px !important;
 }
-
+.modal-body {
+  padding: 0 !important;
+}
 .preview-img {
   width: 800px;
-  margin: 20px auto;
+  margin: 0px auto;
 }
 
 .preview-img img {
@@ -107,6 +119,11 @@ form {
 .full-img {
   width: 1300px;
 }
+
+.full-img {
+  max-width: 1300px !important;
+}
+
 
 .full-img img {
   cursor: zoom-out;
@@ -137,16 +154,15 @@ form {
 select {
   width: 100px;
   height: 30px;
-  margin-top: 20px;
+  margin: 20px 10px 10px auto !important;
   display: flex;
-  margin-left: auto;
-  margin-right: 10px;
   border-color: #ccc;
   cursor: pointer;
 }
 select:focus {
   outline: transparent;
 }
+
 
 @keyframes spin {
   0% {
@@ -166,12 +182,18 @@ select:focus {
   .gallery-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  .gallery-img {
-    width: 230px;
-    height: 230px;
+
+  form {
+    width: 100%;
+    text-align: center;
   }
 }
 @media(max-width: 500px) {
+  .banner {
+    height: 45vh;
+    background-position: 55% 80%;
+  }
+  
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
   }

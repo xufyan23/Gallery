@@ -86,8 +86,9 @@ function Home() {
 				<h1>Search Images</h1>
 				<form className="search-form" onSubmit={(e) => handleSubmit(e)}>
 					<div class="form-group">
-						<Search className="search-icon" />
-						<input type="text" value={query} ref={inputFocus} onChange={(e) => setQuery(e.target.value)} className="form-control" name="search" placeholder="Search Images" />
+						<button className="search-btn" type="submit"><Search className="search-icon" /></button>
+						<input type="text" value={query} ref={inputFocus} onChange={(e) => setQuery(e.target.value)} className="search-input" name="search" placeholder="Search Images" />
+					
 					</div>
 				</form>
 			</div>
@@ -105,6 +106,7 @@ function Home() {
 			<InfiniteScroll
 				dataLength={result.length}
 				next={randomImages}
+				//next page exit or not
 				hasMore={next !==null}
 				loader={<span className="loader-icon"></span>}
 				endMessage={
