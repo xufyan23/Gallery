@@ -16,6 +16,7 @@ function ImagePreview({match, id, showImg, setShowImg}) {
 
 	const fetchQuery = async () => {
 			try {
+				setResult(null)
 			const data = await fetch(`https://api.pexels.com/v1/photos/${id}`, {
 				method: 'GET',
 				headers: {
@@ -66,7 +67,7 @@ function ImagePreview({match, id, showImg, setShowImg}) {
 						loading ? <div className="loader"><span className="loader-icon"></span></div>
 							:
 							<div className="preview-img">
-								<img src={result.original} onClick={zoomImg} />
+								<img src={result?.original} onClick={zoomImg} />
 							</div>
 					}
 				</Modal.Body>

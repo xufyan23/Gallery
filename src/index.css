@@ -103,6 +103,12 @@ form {
 .modal-dialog {
   max-width: 800px !important;
 }
+.modal-content {
+  border: 0 !important;
+}
+.modal-header {
+  border-bottom: 0 !important;
+}
 .modal-body {
   padding: 0 !important;
 }
